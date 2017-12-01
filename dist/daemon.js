@@ -23,15 +23,18 @@ function updateDataset() {
         storage.saveDataset(dataset);
     });
 }
-process
-    .once('SIGINT', () => process.exit(1))
-    .once('SIGTERM', () => process.exit(1));
-try {
-    acquireLock();
+function run() {
+    process
+        .once('SIGINT', () => process.exit(1))
+        .once('SIGTERM', () => process.exit(1));
+    try {
+        acquireLock();
+    }
+    catch (error) {
+        process.exit(1);
+    }
+    updateDataset();
+    setInterval(updateDataset, 60 * 1000);
 }
-catch (error) {
-    process.exit(1);
-}
-updateDataset();
-setInterval(updateDataset, 60 * 1000);
+exports.run = run;
 //# sourceMappingURL=daemon.js.map

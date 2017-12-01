@@ -22,8 +22,12 @@ function parseArgs(argv) {
         fetch: commander.fetch
     };
 }
-function start(args) {
+function run() {
     return __awaiter(this, void 0, void 0, function* () {
+        if (process.argv.length < 2) {
+            process.argv.push('coin-ocd'); // fix 'node -e' bug with commander
+        }
+        const args = parseArgs(process.argv);
         const dataset = storage.loadDataset();
         if (dataset != null && dataset.isRecent()) {
             const coin = dataset.getCoin(args.symbol);
@@ -34,5 +38,5 @@ function start(args) {
         }
     });
 }
-start(parseArgs(process.argv));
+exports.run = run;
 //# sourceMappingURL=cli.js.map
