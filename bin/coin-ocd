@@ -1,0 +1,13 @@
+#!/bin/bash
+
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+function cli {
+ node "$here/../dist/cli.js" "$@"
+}
+
+function daemon {
+  node "$here/../dist/daemon.js"
+}
+
+daemon & cli "$@"

@@ -1,0 +1,28 @@
+{
+  "name": "bitcoin-ocd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "bin": {
+    "coin-ocd": "bin/coin-ocd"
+  },
+  "devDependencies": {
+    "@types/commander": "^2.11.0",
+    "@types/isomorphic-fetch": "^0.0.34",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^8.0.53",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "commander": "^2.12.2",
+    "isomorphic-fetch": "^2.2.1",
+    "proper-lockfile": "^2.0.1"
+  }
+}
