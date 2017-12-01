@@ -19,16 +19,17 @@ async function updateDataset() {
 }
 
 
-process
-  .once('SIGINT', () => process.exit(1))
-  .once('SIGTERM', () => process.exit(1))
+export function run() {
+  process
+    .once('SIGINT', () => process.exit(1))
+    .once('SIGTERM', () => process.exit(1))
 
+  try {
+    acquireLock()
+  } catch (error) {
+    process.exit(1)
+  }
 
-try {
-  acquireLock()
-} catch (error) {
-  process.exit(1)
+  updateDataset()
+  setInterval(updateDataset, 60 * 1000)
 }
-
-updateDataset()
-setInterval(updateDataset, 60 * 1000)

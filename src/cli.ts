@@ -25,7 +25,12 @@ function parseArgs(argv: string[]): Arguments {
 }
 
 
-async function start(args: Arguments) {
+export async function run() {
+  if (process.argv.length < 2) {
+    process.argv.push('coin-ocd') // commander throws without this. Yeah
+  }
+
+  const args = parseArgs(process.argv)
   const dataset = storage.loadDataset()
 
   if (dataset != null && dataset.isRecent()) {
@@ -36,6 +41,3 @@ async function start(args: Arguments) {
     console.log(`${args.symbol} ?`)
   }
 }
-
-
-start(parseArgs(process.argv))
