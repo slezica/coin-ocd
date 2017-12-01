@@ -1,13 +1,11 @@
 #!/bin/bash
 
-here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 function cli {
- node "$here/../dist/cli.js" "$@"
+  node -e 'require("coin-ocd").runCli()' "$@"
 }
 
 function daemon {
-  node "$here/../dist/daemon.js"
+  node -e 'require("coin-ocd").runDaemon()' "$@"
 }
 
 daemon & cli "$@"
