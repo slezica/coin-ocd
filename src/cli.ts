@@ -47,8 +47,13 @@ export async function run() {
   const args = parseArgs(process.argv)
   const dataset = storage.loadDataset()
 
-  if (dataset != null && dataset.isRecent()&&  dataset.hasCoin(args.symbol)) {
+  if (dataset != null && dataset.isRecent()) {
     const coin = dataset.getCoin(args.symbol)
+
+    if (coin == null) {
+      console.error("Unknown currency: " + args.symbol)
+      process.exit(1)
+    }
 
     let arrow
     let color: 'green' | 'red'
