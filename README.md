@@ -36,7 +36,7 @@ The real power of `coin-ocd` shows when you place it in your prompt:
 you@computer $ export PS1="[\$(coin-ocd)] $PS1"
 [BTC ⭡ 10896] you@computer $ echo oh yes, yes you did
 oh yes, yes you did
-[BTC ⭡ 10896] you@computer $
+[BTC ⭡ 10898] you@computer $
 ```
 
 Finally! You can pry your fingers off the refresh hotkey of your browser
