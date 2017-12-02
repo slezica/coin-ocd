@@ -1,11 +1,8 @@
 #!/bin/bash
 
-function cli {
-  node -e 'require("coin-ocd").runCli()' "$@"
-}
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-function daemon {
-  node -e 'require("coin-ocd").runDaemon()' "$@"
-}
+daemon="$here/__coin-ocd-daemon"
+cli="$here/__coin-ocd-cli"
 
-daemon & cli "$@"
+"$daemon" & "$cli" "$@"

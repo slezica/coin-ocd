@@ -12,7 +12,9 @@
     "dist"
   ],
   "bin": {
-    "coin-ocd": "bin/coin-ocd"
+    "coin-ocd": "bin/coin-ocd",
+    "__coin-ocd-cli": "bin/__coin-ocd-cli",
+    "__coin-ocd-daemon": "bin/__coin-ocd-daemon"
   },
   "devDependencies": {
     "@types/commander": "^2.11.0",

@@ -4,23 +4,36 @@ import { Coin, Dataset } from './model'
 
 
 type Arguments = {
-  symbol: string,
-  fetch : boolean
+  symbol: string
 }
+
+
+const HELP = `
+Usage: coin-ocd [symbol=BTC]
+
+Options:
+    -h, --help: print usage information
+
+Examples:
+    $ coin-ocd     # print Bitcoin price
+    $ coin-ocd eth # print Ethereum price
+    $ coin-ocd bch # print BitcoinCash price
+`
 
 
 function parseArgs(argv: string[]): Arguments {
   commander
-    .option('-c, --coin <symbol>', "Cryptocurrency symbol", "BTC")
+    .arguments("[symbol]")
     .parse(argv)
+
+  commander.on('--help', () => console.log(HELP))
 
   if (commander.args.length > 1) {
     commander.help()
   }
 
   return {
-    symbol: commander.coin ? commander.coin.toUpperCase() : 'BTC',
-    fetch : commander.fetch
+    symbol: commander.args[0] ? commander.args[0].toUpperCase() : 'BTC'
   }
 }
 
