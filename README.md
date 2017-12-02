@@ -30,14 +30,15 @@ ETH ⭣ 469
 
 ## Advanced Usage
 
-The real power of `coin-ocd` shows when you place it in your prompt:
+The real power of `coin-ocd` shows when you place it in your prompt. For example:
 
 ```bash
-you@computer $ export PS1="[\$(coin-ocd --color btc)] $PS1"
-[BTC ⭡ 10896] you@computer $ echo oh yes, yes you did
-oh yes, yes you did
-[BTC ⭡ 10898] you@computer $
+$ export PS1="[\$(coin-ocd --color btc)] $PS1"
 ```
+
+Let's see that in action:
+
+![example2](https://i.imgur.com/mqyvIoT.png)
 
 Finally! You can pry your fingers off the refresh hotkey of your browser
 and slowly destroy your sanity in a fully-automated fashion while you work.
