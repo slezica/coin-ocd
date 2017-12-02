@@ -25,6 +25,8 @@ Examples:
 function parseArgs(argv: string[]): Arguments {
   commander
     .arguments("[symbol]")
+    .option("--color", "Force-enable colors")
+    .option("--no-color", "Force-disable colors")
     .parse(argv)
 
   commander.on('--help', () => console.log(HELP))
