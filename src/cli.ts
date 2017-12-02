@@ -66,6 +66,6 @@ export async function run() {
     console.log(chalk.bold[color](message))
 
   } else {
-    console.log(`${args.symbol} ?`)
+    console.log(chalk.bold.gray(`${args.symbol} ⭮`))
   }
 }
