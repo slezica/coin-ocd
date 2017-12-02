@@ -13,7 +13,7 @@ $ npm install -g coin-ocd
 
 You can type `coin-ocd` on your terminal, if you prefer to self-destruct manually.
 
-Coin OCD will tell you the latest cryptocurrency prices, and whether they've gone
+Coin OCD will tell you the latest Bitcoin price, and whether it's gone
 up or down in the last hour.
 
 ```bash
