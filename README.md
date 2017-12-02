@@ -3,6 +3,8 @@
 An obssesive-compulsive tool to enhance your command-line prompt with the ability
 to drive you insane.
 
+![example](https://i.imgur.com/8F7Yoy7.png)
+
 ## Installation
 
 ```bash
@@ -13,15 +15,13 @@ $ npm install -g coin-ocd
 
 You can type `coin-ocd` on your terminal, if you prefer to self-destruct manually.
 
-Coin OCD will tell you the latest Bitcoin price, and whether it's gone
-up or down in the last hour.
-
 ```bash
 $ coin-ocd
 BTC ⭡ 10896
 ```
 
-Other currencies are supported as well:
+Coin OCD will tell you the latest Bitcoin price, and whether it's gone
+up or down in the last hour. Other currencies are supported as well:
 
 ```bash
 $ coin-ocd eth
@@ -33,7 +33,7 @@ ETH ⭣ 469
 The real power of `coin-ocd` shows when you place it in your prompt:
 
 ```bash
-you@computer $ export PS1="[\$(coin-ocd)] $PS1"
+you@computer $ export PS1="[\$(coin-ocd --color btc)] $PS1"
 [BTC ⭡ 10896] you@computer $ echo oh yes, yes you did
 oh yes, yes you did
 [BTC ⭡ 10898] you@computer $
