@@ -35,6 +35,10 @@ export class Dataset {
     return then.isAfter(now.subtract(5, 'minutes'))
   }
 
+  hasCoin(symbol: string) {
+    return (this.getCoin(symbol) != null)
+  }
+
   getCoin(symbol: string): Coin | null {
     return this.coins.filter(coin => coin.symbol === symbol)[0] || null
   }

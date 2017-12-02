@@ -11,18 +11,21 @@ $ npm install -g coin-ocd
 
 ## Basic Usage
 
-You can run `coin-ocd` on your terminal, if you prefer to self-destruct manually:
+You can type `coin-ocd` on your terminal, if you prefer to self-destruct manually.
+
+Coin OCD will tell you the latest cryptocurrency prices, and whether they've gone
+up or down in the last hour.
 
 ```bash
 $ coin-ocd
-BTC 10896
+BTC ⭡ 10896
 ```
 
 Other currencies are supported as well:
 
 ```bash
 $ coin-ocd eth
-ETH 469
+ETH ⭣ 469
 ```
 
 ## Advanced Usage
@@ -31,7 +34,7 @@ The real power of `coin-ocd` shows when you place it in your prompt:
 
 ```bash
 you@computer $ export PS1="[\$(coin-ocd)] $PS1"
-[BTC 10896] you@computer $ echo oh yes, yes you did
+[BTC ⭡ 10896] you@computer $ echo oh yes, yes you did
 oh yes, yes you did
 [BTC 10896] you@computer $
 ```

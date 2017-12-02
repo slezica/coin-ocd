@@ -1,5 +1,6 @@
 import * as commander from 'commander'
 import * as storage from './storage'
+import chalk from 'chalk'
 import { Coin, Dataset } from './model'
 
 
@@ -46,9 +47,23 @@ export async function run() {
   const args = parseArgs(process.argv)
   const dataset = storage.loadDataset()
 
-  if (dataset != null && dataset.isRecent()) {
+  if (dataset != null && dataset.isRecent()&&  dataset.hasCoin(args.symbol)) {
     const coin = dataset.getCoin(args.symbol)
-    console.log(`${coin.symbol} ${coin.priceUsd.toFixed(0)}`)
+
+    let arrow
+    let color: 'green' | 'red'
+
+    if (coin.percentChange1h > 0) {
+      arrow = '⭡'
+      color = 'green'
+    } else {
+      arrow = '⭣'
+      color = 'red'
+    }
+
+    const message = `${coin.symbol} ${arrow} ${coin.priceUsd.toFixed(0)}`
+
+    console.log(chalk.bold[color](message))
 
   } else {
     console.log(`${args.symbol} ?`)
