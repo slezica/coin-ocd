@@ -1,6 +1,6 @@
 {
   "name": "coin-ocd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "chalk": "^2.3.0",
     "commander": "^2.12.2",
     "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.19.3",
     "proper-lockfile": "^2.0.1"
   }
 }
